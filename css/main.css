@@ -36,8 +36,11 @@ body {
 }
 
 .note {
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(2rem, 6vw, 2.8rem);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  letter-spacing: 0.02em;
   color: var(--blush);
   text-align: center;
   margin-top: -1.5rem;
