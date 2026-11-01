@@ -32,7 +32,17 @@ body {
 .bouquet {
   width: min(92vw, 520px);
   height: auto;
-  max-height: 92vh;
+  max-height: 80vh;
+}
+
+.note {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  color: var(--blush);
+  text-align: center;
+  margin-top: -1.5rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 2.4s forwards;
 }
 
 .rose-deep { color: var(--rose-deep); }
