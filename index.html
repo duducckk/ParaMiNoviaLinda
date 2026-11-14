@@ -8,10 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.css?v=7">
 </head>
 <body>
-    <svg class="bouquet" viewBox="0 0 600 720" role="img" aria-label="Ramo de flores">
+    <svg class="bouquet" viewBox="0 0 600 720" role="group" aria-label="Ramo de flores">
         <defs>
             <!-- Ranunculus: layered petals, color comes from the <use> element -->
             <g id="ranun">
@@ -106,16 +106,20 @@
         <use href="#leaf" class="leaf" transform="translate(243,305) rotate(-28) scale(.7)"/>
         <use href="#leaf" class="leaf" transform="translate(360,300) rotate(26) scale(.7)"/>
 
+        <use href="#leaf" class="leaf" transform="translate(180,470) rotate(-80) scale(.8)"/>
+        <use href="#leaf" class="leaf" transform="translate(420,470) rotate(78) scale(.8)"/>
+        <use href="#leaf" class="leaf" transform="translate(300,330) rotate(0) scale(.65)"/>
+
         <!-- Blooms, back to front -->
-        <g transform="translate(300,110) rotate(-6) scale(.95)"><use href="#ranun" class="bloom rose-deep" style="--d:1s"/></g>
-        <g transform="translate(235,205) rotate(8)"><use href="#ranun" class="bloom blush" style="--d:1.1s"/></g>
-        <g transform="translate(372,190) rotate(-10) scale(1.05)"><use href="#ranun" class="bloom rose" style="--d:1.2s"/></g>
-        <g transform="translate(170,330) rotate(-4) scale(.9)"><use href="#ranun" class="bloom apricot" style="--d:1.5s"/></g>
-        <g transform="translate(350,340) rotate(12) scale(.9)"><use href="#ranun" class="bloom blush" style="--d:1.6s"/></g>
-        <g transform="translate(262,330) rotate(10)"><use href="#daisy" class="bloom cream" style="--d:1.7s"/></g>
-        <g transform="translate(430,320) rotate(5) scale(.9)"><use href="#ranun" class="bloom rose" style="--d:1.8s"/></g>
-        <g transform="translate(120,420) rotate(-8) scale(.95)"><use href="#daisy" class="bloom cream" style="--d:1.9s"/></g>
-        <g transform="translate(480,420) rotate(14) scale(.85)"><use href="#ranun" class="bloom rose-deep" style="--d:2s"/></g>
+        <g transform="translate(300,110) rotate(-6) scale(.95)"><use data-msg="Te quiero mucho guapa papita" href="#ranun" class="bloom rose-deep" style="--d:1s"/></g>
+        <g transform="translate(235,205) rotate(8)"><use data-msg="Me gustan tus besitos" href="#ranun" class="bloom blush" style="--d:1.1s"/></g>
+        <g transform="translate(372,190) rotate(-10) scale(1.05)"><use data-msg="Eres la mas bonita" href="#ranun" class="bloom rose" style="--d:1.2s"/></g>
+        <g transform="translate(170,330) rotate(-4) scale(.9)"><use data-msg="Me encanta tu naricita" href="#ranun" class="bloom apricot" style="--d:1.5s"/></g>
+        <g transform="translate(350,340) rotate(12) scale(.9)"><use data-msg="Bonitas orejitas :D" href="#ranun" class="bloom blush" style="--d:1.6s"/></g>
+        <g transform="translate(262,330) rotate(10)"><use data-msg="Durame siempre!" href="#daisy" class="bloom cream" style="--d:1.7s"/></g>
+        <g transform="translate(430,320) rotate(5) scale(.9)"><use data-msg="Mua mua mua mua muamua" href="#ranun" class="bloom rose" style="--d:1.8s"/></g>
+        <g transform="translate(120,420) rotate(-8) scale(.95)"><use data-msg="Papantla" href="#daisy" class="bloom cream" style="--d:1.9s"/></g>
+        <g transform="translate(480,420) rotate(14) scale(.85)"><use data-msg="Quiero muchos abracitos!!!" href="#ranun" class="bloom rose-deep" style="--d:2s"/></g>
         <g transform="translate(215,120) rotate(-24) scale(.8)"><use href="#bud" class="bloom blush" style="--d:2.1s"/></g>
         <g transform="translate(398,108) rotate(26) scale(.75)"><use href="#bud" class="bloom rose-deep" style="--d:2.2s"/></g>
 
@@ -125,10 +129,12 @@
         <use href="#sprig" transform="translate(150,380) rotate(-15)"/>
         <use href="#sprig" transform="translate(452,372) rotate(-15)"/>
 
-        <!-- Kraft paper wrap -->
-        <path d="M300,520 C260,500 200,470 175,455 L120,690 C200,705 260,700 300,690 Z" fill="#D9B99B"/>
+        <!-- Kraft paper wrap: the left sheet folds over the right one -->
         <path d="M300,520 C340,500 400,470 425,455 L480,690 C400,705 340,700 300,690 Z" fill="#C49C77"/>
-        <path d="M300,520 L300,690" stroke="#A9825E" stroke-width="2"/>
+        <path d="M322,540 C318,600 308,650 300,690 L342,697 C348,640 350,590 322,540Z" fill="#000" opacity=".12"/>
+        <path d="M175,455 C215,478 265,505 322,540 C318,600 308,650 300,690 C240,704 175,700 120,690 Z" fill="#D9B99B"/>
+        <path d="M175,455 C215,478 265,505 322,540" fill="none" stroke="#EBD6BF" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M322,540 C318,600 308,650 300,690" fill="none" stroke="#A9825E" stroke-width="2"/>
 
         <!-- Twine bow -->
         <path d="M204,612 Q300,630 396,612 L393,632 Q300,650 207,632 Z" fill="#6E2F3F"/>
@@ -137,6 +143,75 @@
         <path d="M294,634 L268,704 L284,702 L300,646Z" fill="#6E2F3F"/>
         <path d="M306,634 L332,704 L316,702 L300,646Z" fill="#7E3848"/>
     </svg>
-    <p class="note">Te amo papita :3</p>
+    <p class="note" id="note" aria-live="polite">Te amo papita :3</p>
+    <p class="hint" id="hint">toca las flores ♥</p>
+    <div class="ctl" id="ctl" hidden>
+        <button type="button" id="pp" aria-label="Pausar música"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+        <button type="button" id="mu" aria-label="Silenciar">♪</button>
+    </div>
+    <script>
+        const note = document.getElementById('note');
+        const hint = document.getElementById('hint');
+        const ctl = document.getElementById('ctl');
+        const pp = document.getElementById('pp');
+        const mu = document.getElementById('mu');
+        const blooms = [...document.querySelectorAll('.bloom[data-msg]')];
+        let frame = null, paused = false, muted = false;
+
+        const PAUSE = '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>', PLAY = '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+        const yt = (func) => frame.contentWindow.postMessage(JSON.stringify({ event: 'command', func, args: [] }), '*');
+        const paint = () => {
+            pp.innerHTML = paused ? PLAY : PAUSE;
+            pp.setAttribute('aria-label', paused ? 'Reproducir música' : 'Pausar música');
+            mu.classList.toggle('off', muted);
+            mu.setAttribute('aria-label', muted ? 'Activar sonido' : 'Silenciar');
+        };
+
+        // YouTube reports its real state back, so the buttons show it even if autoplay was blocked.
+        addEventListener('message', (e) => {
+            if (!frame || e.source !== frame.contentWindow) return;
+            let d; try { d = JSON.parse(e.data); } catch { return; }
+            const st = d.info && d.info.playerState;
+            if (st === 1) paused = false; else if (st === 2 || st === 5 || st === -1) paused = true; else return;
+            paint();
+        });
+
+        function startMusic() {
+            frame = document.createElement('iframe');
+            const o = location.protocol.startsWith('http') ? '&origin=' + encodeURIComponent(location.origin) : '';
+            frame.src = 'https://www.youtube.com/embed/aOYPc3fJbvc?autoplay=1&loop=1&playlist=aOYPc3fJbvc&enablejsapi=1' + o;
+            frame.allow = 'autoplay';
+            frame.title = 'Música';
+            frame.className = 'player';
+            frame.onload = () => frame.contentWindow.postMessage(JSON.stringify({ event: 'listening' }), '*');
+            document.body.append(frame);
+            ctl.hidden = false;
+        }
+
+        pp.onclick = () => { yt(paused ? 'playVideo' : 'pauseVideo'); paused = !paused; paint(); };
+        mu.onclick = () => { yt(muted ? 'unMute' : 'mute'); muted = !muted; paint(); };
+
+        function tap(b) {
+            hint.remove();
+            blooms.forEach(x => x.classList.remove('nudge'));
+            // Browsers block sound until a tap, so the song starts on the first flower.
+            if (!frame) startMusic();
+            note.textContent = b.dataset.msg;
+            b.classList.remove('pop'); void b.getBoundingClientRect(); b.classList.add('pop');
+        }
+
+        blooms.forEach((b, n) => {
+            b.setAttribute('tabindex', '0');
+            b.setAttribute('role', 'button');
+            b.setAttribute('aria-label', 'Flor ' + (n + 1));
+            b.addEventListener('click', () => tap(b));
+            b.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tap(b); }
+            });
+        });
+
+        // If she hasn't touched anything after a few seconds, one flower gently invites a tap.
+        setTimeout(() => { if (hint.isConnected) blooms[1].classList.add('nudge'); }, 7000);
+    </script>
 </body>
 </html>

@@ -25,14 +25,22 @@ body {
   background: var(--paper);
   display: grid;
   place-items: center;
+  place-content: center;
   min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
 }
 
 .bouquet {
   width: min(92vw, 520px);
   height: auto;
-  max-height: 80vh;
+  max-height: 76vh;
+  transform-origin: 50% 95%;
+  animation: sway 7s ease-in-out 3s infinite;
+}
+
+@keyframes sway {
+  50% { transform: rotate(1.2deg); }
 }
 
 .note {
@@ -43,7 +51,7 @@ body {
   letter-spacing: 0.02em;
   color: var(--blush);
   text-align: center;
-  margin-top: -1.5rem;
+  margin-top: 0.2rem;
   opacity: 0;
   animation: fadeIn 1s ease-out 2.4s forwards;
 }
@@ -83,6 +91,66 @@ body {
   animation-delay: var(--d, 1s);
 }
 
+.bloom[data-msg] { cursor: pointer; }
+
+.bloom:focus-visible { outline: 2px solid var(--apricot); outline-offset: 4px; }
+
+.bloom.nudge { animation: nudge 1.8s ease-in-out infinite; opacity: 1; }
+
+@keyframes nudge {
+  50% { transform: scale(1.12); }
+}
+
+.ctl[hidden] { display: none; }
+
+.ctl {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.ctl button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(231, 169, 163, 0.4);
+  background: rgba(29, 42, 38, 0.8);
+  color: var(--blush);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.ctl button:focus-visible { outline: 2px solid var(--apricot); outline-offset: 2px; }
+
+.ctl button.off { text-decoration: line-through; opacity: 0.6; }
+
+.bloom.pop { animation: pop 0.5s ease-out; opacity: 1; }
+
+@keyframes pop {
+  40% { transform: scale(1.18) rotate(6deg); }
+}
+
+.hint {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+  color: var(--apricot);
+  margin-top: 1rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 3.2s forwards;
+}
+
+.player {
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
 @keyframes bloomIn {
   from { opacity: 0; transform: scale(0.3); }
   to { opacity: 1; transform: scale(1); }
@@ -93,7 +161,11 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .bouquet,
+  .bloom.nudge,
   .stem,
+  .note,
+  .hint,
   .leaf,
   .bloom {
     animation: none;
